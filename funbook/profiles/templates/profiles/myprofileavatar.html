@@ -1,0 +1,254 @@
+{% extends 'base.html' %}
+{% block title %}
+my profile avatar
+{% endblock title %}
+
+{% block content %}
+
+<div class="sidenav" >
+  <h3>Customise Your Avatar</h3>
+  <hr/>
+  <form action="" method="POST" class="customform">
+    {% csrf_token %}
+    <p>Style</p>
+    <select name="style" class="dropselect">
+      <option value="CIRCLE">CIRCLE</option>
+      <option value="TRANSPARENT">TRANSPARENT</option>
+    </select>
+    <br><br>
+    <p>Skin Color</p>
+    <select name="skin_color" class="dropselect">
+      <option value="TANNED">TANNED</option>
+      <option value="YELLOW">YELLOW</option>
+      <option value="PALE">PALE</option>
+      <option value="LIGHT">LIGHT</option>
+      <option value="BROWN">BROWN</option>
+      <option value="DARK_BROWN">DARK_BROWN</option>
+      <option value="BLACK">BLACK</option>
+    </select>
+    <br>
+    <h3>Head</h3>
+    <p>Head Top</p>
+    <select name="top_type" class="dropselect">
+      <option value="NO_HAIR">NO_HAIR</option>
+      <option value="EYE_PATCH">EYE_PATCH</option>
+      <option value="HAT">HAT</option>
+      <option value="HIJAB">HIJAB</option>
+      <option value="TURBAN">TURBAN</option>
+      <option value="WINTER_HAT1">WINTER_HAT1</option>
+      <option value="WINTER_HAT2">WINTER_HAT2</option>
+      <option value="WINTER_HAT3">WINTER_HAT3</option>
+      <option value="WINTER_HAT4">WINTER_HAT4</option>
+      <option value="LONG_HAIR_BIG_HAIR">LONG_HAIR_BIG_HAIR</option>
+      <option value="LONG_HAIR_BOB">LONG_HAIR_BOB</option>
+      <option value="LONG_HAIR_BUN">LONG_HAIR_BUN</option>
+      <option value="LONG_HAIR_CURLY">LONG_HAIR_CURLY</option>
+      <option value="LONG_HAIR_CURVY">LONG_HAIR_CURVY</option>
+      <option value="LONG_HAIR_DREADS">LONG_HAIR_DREADS</option>
+      <option value="LONG_HAIR_FRIDA">LONG_HAIR_FRIDA</option>
+      <option value="LONG_HAIR_FRO">LONG_HAIR_FRO</option>
+      <option value="LONG_HAIR_FRO_BAND">LONG_HAIR_FRO_BAND</option>
+      <option value="LONG_HAIR_NOT_TOO_LONG">LONG_HAIR_NOT_TOO_LONG</option>
+      <option value="LONG_HAIR_SHAVED_SIDES">LONG_HAIR_SHAVED_SIDES</option>
+      <option value="LONG_HAIR_MIA_WALLACE">LONG_HAIR_MIA_WALLACE</option>
+      <option value="LONG_HAIR_STRAIGHT">LONG_HAIR_STRAIGHT</option>
+      <option value="LONG_HAIR_STRAIGHT2">LONG_HAIR_STRAIGHT2</option>
+      <option value="LONG_HAIR_STRAIGHT_STRAND">LONG_HAIR_STRAIGHT_STRAND</option>
+      <option value="SHORT_HAIR_DREADS_01">SHORT_HAIR_DREADS_01</option>
+      <option value="SHORT_HAIR_DREADS_02">SHORT_HAIR_DREADS_02</option>
+      <option value="SHORT_HAIR_FRIZZLE">SHORT_HAIR_FRIZZLE</option>
+      <option value="SHORT_HAIR_SHAGGY_MULLET">SHORT_HAIR_SHAGGY_MULLET</option>
+      <option value="SHORT_HAIR_SHORT_CURLY">SHORT_HAIR_SHORT_CURLY</option>
+      <option value="SHORT_HAIR_SHORT_FLAT">SHORT_HAIR_SHORT_FLAT</option>
+      <option value="SHORT_HAIR_SHORT_ROUND">SHORT_HAIR_SHORT_ROUND</option>
+      <option value="SHORT_HAIR_SHORT_WAVED">SHORT_HAIR_SHORT_WAVED</option>
+      <option value="SHORT_HAIR_SIDES">SHORT_HAIR_SIDES</option>
+      <option value="SHORT_HAIR_THE_CAESAR">SHORT_HAIR_THE_CAESAR</option>
+      <option value="SHORT_HAIR_THE_CAESAR_SIDE_PART">SHORT_HAIR_THE_CAESAR_SIDE_PART</option>
+    </select>
+    <br><br>
+    <p>Hair Color</p>
+    <select name="hair_color" class="dropselect">
+      <option value="AUBURN">AUBURN</option>
+      <option value="BLACK">BLACK</option>
+      <option value="BLONDE">BLONDE</option>
+      <option value="BLONDE_GOLDEN">BLONDE_GOLDEN</option>
+      <option value="BROWN">BROWN</option>
+      <option value="BROWN_DARK">BROWN_DARK</option>
+      <option value="PASTEL_PINK">PASTEL_PINK</option>
+      <option value="PLATINUM">PLATINUM</option>
+      <option value="RED">RED</option>
+      <option value="SILVER_GRAY">SILVER_GRAY</option>
+    </select>
+    <br><br>
+    <p>Hat Color</p>
+    <select name="hat_color" class="dropselect">
+      <option value="BLACK">BLACK</option>
+      <option value="BLUE_01">BLUE_01</option>
+      <option value="BLUE_02">BLUE_02</option>
+      <option value="BLUE_03">BLUE_03</option>
+      <option value="GRAY_01">GRAY_01</option>
+      <option value="GRAY_02">GRAY_02</option>
+      <option value="HEATHER">HEATHER</option>
+      <option value="PASTEL_BLUE">PASTEL_BLUE</option>
+      <option value="PASTEL_GREEN">PASTEL_GREEN</option>
+      <option value="PASTEL_ORANGE">PASTEL_ORANGE</option>
+      <option value="PASTEL_RED">PASTEL_RED</option>
+      <option value="PASTEL_YELLOW">PASTEL_YELLOW</option>
+      <option value="PINK">PINK</option>
+      <option value="RED">RED</option>
+      <option value="WHITE">WHITE</option>
+    </select>
+    <br>
+
+    <h3>Face</h3>
+    <p>Facial hair type</p>
+    <select name="facial_hair_type" class="dropselect">
+      <option value="DEFAULT">DEFAULT</option>
+      <option value="BEARD_MEDIUM">BEARD_MEDIUM</option>
+      <option value="BEARD_LIGHT">BEARD_LIGHT</option>
+      <option value="BEARD_MAJESTIC">BEARD_MAJESTIC</option>
+      <option value="MOUSTACHE_FANCY">MOUSTACHE_FANCY</option>
+      <option value="MOUSTACHE_MAGNUM">MOUSTACHE_MAGNUM</option>
+    </select>
+    <br><br>
+    <p>Facial hair color</p>
+    <select name="facial_hair_color" class="dropselect">
+      <option value="AUBURN">AUBURN</option>
+      <option value="BLACK">BLACK</option>
+      <option value="BLONDE">BLONDE</option>
+      <option value="BLONDE_GOLDEN">BLONDE_GOLDEN</option>
+      <option value="BROWN">BROWN</option>
+      <option value="BROWN_DARK">BROWN_DARK</option>
+      <option value="PLATINUM">PLATINUM</option>
+      <option value="RED">RED</option>
+    </select>
+    <br><br>
+    <p>Mouth type</p>
+    <select name="mouth_type" class="dropselect">
+      <option value="DEFAULT">DEFAULT</option>
+      <option value="CONCERNED">CONCERNED</option>
+      <option value="DISBELIEF">DISBELIEF</option>
+      <option value="EATING">EATING</option>
+      <option value="GRIMACE">GRIMACE</option>
+      <option value="SAD">SAD</option>
+      <option value="SCREAM_OPEN">SCREAM_OPEN</option>
+      <option value="SERIOUS">SERIOUS</option>
+      <option value="SMILE">SMILE</option>
+      <option value="TONGUE">TONGUE</option>
+      <option value="TWINKLE">TWINKLE</option>
+      <option value="VOMIT">VOMIT</option>
+    </select>
+    <br><br>
+    <p>Eye type</p>
+    <select name="eye_type" class="dropselect">
+      <option value="DEFAULT">DEFAULT</option>
+      <option value="CLOSE">CLOSE</option>
+      <option value="CRY">CRY</option>
+      <option value="DIZZY">DIZZY</option>
+      <option value="EYE_ROLL">EYE_ROLL</option>
+      <option value="HAPPY">HAPPY</option>
+      <option value="HEARTS">HEARTS</option>
+      <option value="SIDE">SIDE</option>
+      <option value="SQUINT">SQUINT</option>
+      <option value="SURPRISED">SURPRISED</option>
+      <option value="WINK">WINK</option>
+      <option value="WINK_WACKY">WINK_WACKY</option>
+    </select>
+    <br><br>
+    <p>Eyebrow type</p>
+    <select name="eyebrow_type" class="dropselect">
+      <option value="DEFAULT">DEFAULT</option>
+      <option value="DEFAULT_NATURAL">DEFAULT_NATURAL</option>
+      <option value="ANGRY">ANGRY</option>
+      <option value="ANGRY_NATURAL">ANGRY_NATURAL</option>
+      <option value="FLAT_NATURAL">FLAT_NATURAL</option>
+      <option value="RAISED_EXCITED">RAISED_EXCITED</option>
+      <option value="RAISED_EXCITED_NATURAL">RAISED_EXCITED_NATURAL</option>
+      <option value="SAD_CONCERNED">SAD_CONCERNED</option>
+    </select>
+    <br>
+
+    <h3>Clothes and accessories</h3>
+    <p>Accessories type</p>
+    <select name="accessories_type" class="dropselect">
+      <option value="DEFAULT">DEFAULT</option>
+      <option value="KURT">KURT</option>
+      <option value="PRESCRIPTION_01">PRESCRIPTION_01</option>
+      <option value="PRESCRIPTION_02">PRESCRIPTION_02</option>
+      <option value="ROUND">ROUND</option>
+      <option value="SUNGLASSES">SUNGLASSES</option>
+      <option value="WAYFARERS">WAYFARERS</option>
+    </select>
+    <br><br>
+    <p>Clothe type</p>
+    <select name="clothe_type" class="dropselect">
+      <option value="BLAZER_SHIRT">BLAZER_SHIRT</option>
+      <option value="BLAZER_SWEATER">BLAZER_SWEATER</option>
+      <option value="COLLAR_SWEATER">COLLAR_SWEATER</option>
+      <option value="GRAPHIC_SHIRT">GRAPHIC_SHIRT</option>
+      <option value="HOODIE">HOODIE</option>
+      <option value="OVERALL">OVERALL</option>
+      <option value="SHIRT_CREW_NECK">SHIRT_CREW_NECK</option>
+      <option value="SHIRT_SCOOP_NECK">SHIRT_SCOOP_NECK</option>
+    </select>
+    <br><br>
+    <p>Clothe Color</p>
+    <select name="clothe_color" class="dropselect">
+      <option value="BLACK">BLACK</option>
+      <option value="BLUE_01">BLUE_01</option>
+      <option value="BLUE_02">BLUE_02</option>
+      <option value="BLUE_03">BLUE_03</option>
+      <option value="GRAY_01">GRAY_01</option>
+      <option value="GRAY_02">GRAY_02</option>
+      <option value="HEATHER">HEATHER</option>
+      <option value="PASTEL_BLUE">PASTEL_BLUE</option>
+      <option value="PASTEL_GREEN">PASTEL_GREEN</option>
+      <option value="PASTEL_ORANGE">PASTEL_ORANGE</option>
+      <option value="PASTEL_RED">PASTEL_RED</option>
+      <option value="PASTEL_YELLOW">PASTEL_YELLOW</option>
+    </select>
+    <br><br>
+    <p>Clothe graphic type</p>
+    <select name="clothe_graphic_type" class="dropselect">
+      <option value="BAT">BAT</option>
+      <option value="CUMBIA">CUMBIA</option>
+      <option value="DEER">DEER</option>
+      <option value="DIAMOND">DIAMOND</option>
+      <option value="HOLA">HOLA</option>
+      <option value="RESIST">RESIST</option>
+      <option value="PIZZA">PIZZA</option>
+      <option value="SELENA">SELENA</option>
+      <option value="BEAR">BEAR</option>
+      <option value="SKULL_OUTLINE">SKULL_OUTLINE</option>
+      <option value="SKULL">SKULL</option>
+    </select>
+    <br><br><br>
+    <button type="submit" class="cmt_btn_2" value="Generate" style="background-color:teal; text-color:white; width:130px; height:40px; ">Generate</button>
+    <br><br><br><br><br><br><br><br>
+  </form>
+</div>
+
+<div class="main">
+  <h1>Generate your own Avatar DP</h1>
+  <hr style="border: 2px solid black;"/>
+  <br>
+  <div class="grid-container">
+    <div class="grid-child">
+      <h3 style="text-align: center;">Default Avatar</h3>
+      <img src="/media/input_file.png" alt="none" style="display: block; margin-left: auto; margin-right: auto;"/>
+    </div>
+    <div class="box grid-child">
+      <h3 style="text-align: center;">Your Avatar</h3>
+      {% if a %}
+      <img src="/media/{{a}}" style="display: block; margin-left: auto; margin-right: auto;" alt="none"/>
+      {% else %}
+      <img src="/media/input_file.png" style="display: block; margin-left: auto; margin-right: auto;" alt="none"/>
+      {% endif %}
+    </div>
+  </div>
+  <br>
+  <br>
+</div>
+
+{% endblock content %}
